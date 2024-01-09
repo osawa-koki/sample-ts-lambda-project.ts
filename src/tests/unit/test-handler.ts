@@ -1,9 +1,11 @@
 import { expect } from 'chai'
+import { type APIGatewayEvent, type Context } from 'aws-lambda'
+
 import { lambdaHandler } from '../../app'
 
-const event = JSON.parse(`{}`)
-const context = JSON.parse(`{}`)
-const callback= (): void  => {}
+const event: APIGatewayEvent = JSON.parse('{}')
+const context: Context = JSON.parse('{}')
+const callback = (): void => {}
 
 describe('Tests index', function () {
   it('verifies successful response', async () => {
@@ -18,6 +20,6 @@ describe('Tests index', function () {
     const response = JSON.parse(result.body)
 
     expect(response).to.be.an('object')
-    expect(response.message).to.be.equal("hello world")
+    expect(response.message).to.be.equal('hello world')
   })
 })
