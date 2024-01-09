@@ -1,4 +1,9 @@
-// @ts-nocheck
+import {
+  type APIGatewayEvent,
+  type APIGatewayProxyHandler,
+  type APIGatewayProxyResult,
+  type Context
+} from 'aws-lambda'
 
 export const lambdaHandler = async (event, context) => {
   return {
