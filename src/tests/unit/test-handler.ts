@@ -1,10 +1,6 @@
-// @ts-nocheck
-
-'use strict';
-
-import { lambdaHandler } from '../../app.mjs';
-import { expect } from 'chai';
-var event, context;
+import { expect } from 'chai'
+import { lambdaHandler } from '../../app'
+var event, context
 
 describe('Tests index', function () {
   it('verifies successful response', async () => {
