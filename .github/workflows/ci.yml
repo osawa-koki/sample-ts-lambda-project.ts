@@ -34,6 +34,8 @@ jobs:
         run: yarn lint
       - name: Type check
         run: yarn type-check
+      - name: Test
+        run: yarn test
   sam-ci:
     runs-on: ubuntu-22.04
     steps:
