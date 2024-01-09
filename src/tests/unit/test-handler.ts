@@ -1,10 +1,9 @@
 import { expect } from 'chai'
-import { type APIGatewayEvent, type Context } from 'aws-lambda'
 
 import { lambdaHandler } from '../../app'
+import event from '../event'
+import context from '../context'
 
-const event: APIGatewayEvent = JSON.parse('{}')
-const context: Context = JSON.parse('{}')
 const callback = (): void => {}
 
 describe('Tests index', function () {
