@@ -1,18 +1,23 @@
 import { expect } from 'chai'
 import { lambdaHandler } from '../../app'
-var event, context
+
+const event = JSON.parse(`{}`)
+const context = JSON.parse(`{}`)
+const callback= (): void  => {}
 
 describe('Tests index', function () {
   it('verifies successful response', async () => {
-    const result = await lambdaHandler(event, context)
+    const result = await lambdaHandler(event, context, callback)
 
-    expect(result).to.be.an('object');
-    expect(result.statusCode).to.equal(200);
-    expect(result.body).to.be.an('string');
+    if (result == null) throw new Error('result is null')
 
-    let response = JSON.parse(result.body);
+    expect(result).to.be.an('object')
+    expect(result.statusCode).to.equal(200)
+    expect(result.body).to.be.an('string')
 
-    expect(response).to.be.an('object');
-    expect(response.message).to.be.equal("hello world");
-  });
-});
+    const response = JSON.parse(result.body)
+
+    expect(response).to.be.an('object')
+    expect(response.message).to.be.equal("hello world")
+  })
+})
