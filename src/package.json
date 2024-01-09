@@ -12,7 +12,12 @@
   },
   "scripts": {
     "build": "esbuild ./app.ts --bundle --platform=node --target=node18 --outfile=./app.js",
-    "test": "mocha ./tests/unit/",
+    "build:test:unit": "esbuild ./tests/unit/*.ts --bundle --platform=node --target=node18 --outfile=./tests/unit/index.js",
+    "build:test:intg": "esbuild ./tests/intg/*.ts --bundle --platform=node --target=node18 --outfile=./tests/intg/index.js",
+    "build:test": "yarn build:test:unit && yarn build:test:intg",
+    "test:unit": "mocha ./tests/unit/",
+    "test:intg": "mocha ./tests/intg/",
+    "test": "yarn test:unit && yarn test:intg",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix",
     "type-check": "tsc --noEmit"
