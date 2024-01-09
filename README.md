@@ -2,6 +2,9 @@
 
 🛰🛰🛰 TypeScriptで実装したLambda関数をデプロイするサンプルプロジェクトです！  
 
+[![ci](https://github.com/osawa-koki/sample-ts-lambda-project.ts/actions/workflows/ci.yml/badge.svg)](https://github.com/osawa-koki/sample-ts-lambda-project.ts/actions/workflows/ci.yml)
+[![cd](https://github.com/osawa-koki/sample-ts-lambda-project.ts/actions/workflows/cd.yml/badge.svg)](https://github.com/osawa-koki/sample-ts-lambda-project.ts/actions/workflows/cd.yml)
+
 ## 環境構築
 
 最初にAWS CLIをインストールします。  
