@@ -20,6 +20,8 @@ Resources:
       FunctionName: !Sub ${AWS::StackName}-lambda-function
       Description: A sample TS Lambda function.
       PackageType: Image
+      ImageConfig:
+        Command: [ "app.lambdaHandler" ]
       Architectures:
         - x86_64
       Events:
