@@ -4,7 +4,7 @@ import {
   type APIGatewayProxyResult,
   type Context
 } from 'aws-lambda'
-import getUuid from './tests/unit/getUuid'
+import getUuid from './utils/getUuid'
 
 export const lambdaHandler: APIGatewayProxyHandler = async (event: APIGatewayEvent, context: Context): Promise<APIGatewayProxyResult> => {
   return {
